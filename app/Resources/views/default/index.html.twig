@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <form name="redirectForm" method="POST" action="{{ redirection_url }}">
+          <input type="hidden" name="redirectionVersion" value="{{ redirection_version }}">
+          <input type="hidden" name="redirectionData" value={{ redirection_data }}>
+          <noscript>
+               <input type="submit" name="Go" value="Click to continue"/>
+          </noscript>
+     </form>
+     <script type="text/javascript"> document.redirectForm.submit(); </script>
+
+{% endblock body %}
